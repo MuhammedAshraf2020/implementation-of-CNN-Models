@@ -13,6 +13,6 @@ def LeNet_tf():
   model.add(Conv2D(filters = 128 , kernel_size = (3 , 3) , strides = (1 , 1)  , activation = "relu"))
   model.add(Flatten())
   model.add(Dense(84 , activation = "relu"))
-  model.add(Dense(10))
+  model.add(Dense(10 , activation = "softmax"))
   model.compile(loss = "categorical_crossentropy" , metrics = ["accuracy"] , optimizer = "adam") 
   return model
