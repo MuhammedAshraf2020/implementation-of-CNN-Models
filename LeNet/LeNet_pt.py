@@ -2,9 +2,9 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 # Create Model
-class LeNet(nn.Module):
+class LeNet_pt(nn.Module):
 	def __init__(self):
-		super(LeNet , self).__init__()
+		super(LeNet_pt , self).__init__()
 		self.ConvModel = nn.Sequential( 
 					nn.Conv2d(in_channels = 1 , out_channels  = 6 , kernel_size   = (5 , 5) , padding = (0 , 0) , stride = (1 , 1)),
 					nn.ReLU() ,
@@ -23,14 +23,3 @@ class LeNet(nn.Module):
 		y = y.reshape(y.shape[0] , -1)
 		y = self.DenseModel(y)
 		return y
-
-
-epochs = 10
-batch_size = 150
-lr = 0.001
-
-device = "cuda" if torch.cuda.is_available() else "cpu"
-model  = LeNet().to(device = device)
-
-loss  = nn.CrossEntropyLoss()
-adam  = optim.Adam(model.parameters() , lr = lr)
