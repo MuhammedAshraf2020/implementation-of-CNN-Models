@@ -14,5 +14,4 @@ def LeNet_tf():
   model.add(Flatten())
   model.add(Dense(84 , activation = "relu"))
   model.add(Dense(10 , activation = "softmax"))
-  model.compile(loss = "categorical_crossentropy" , metrics = ["accuracy"] , optimizer = "adam") 
   return model
