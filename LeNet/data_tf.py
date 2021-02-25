@@ -1,7 +1,7 @@
 import keras
 import numpy as np
 from keras.utils import to_categorical
-from keras.datasets.cifar10 import load_data
+from keras.datasets.mnist import load_data
 def data_tf():
   (x_train , y_train) , (x_test , y_test) = load_data()
   print("x train shape = " , x_train.shape)
