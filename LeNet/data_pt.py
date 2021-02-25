@@ -1,5 +1,6 @@
 import torchvision
 import torchvision.transforms as transforms
+import torch
 
 def data_pt( batch_size = 150):
   trainset = torchvision.datasets.CIFAR10(root='./data', train=True,
