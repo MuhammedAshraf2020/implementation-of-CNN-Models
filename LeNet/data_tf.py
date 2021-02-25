@@ -4,6 +4,8 @@ from keras.utils import to_categorical
 from keras.datasets.cifar10 import load_data
 def data_tf():
   (x_train , y_train) , (x_test , y_test) = load_data()
+  x_train = x_train / 255.0
+  x_test  = x_test / 255.0
   print("x train shape = " , x_train.shape)
   print("x test  shape = " , x_test.shape)
   y_train = to_categorical(y_train)
