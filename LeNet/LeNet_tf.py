@@ -3,7 +3,7 @@ from keras.layers import Conv2D , AveragePooling2D , Input ,  Dense , Flatten
 from keras.models import Sequential
 
 
-def LeNet()
+def LeNet_tf():
   model = Sequential()
   model.add(Input(shape = (32 , 32 , 1) ))
   model.add(Conv2D(filters = 6 , kernel_size = (5 , 5) , strides = (1 , 1)  , activation = "relu"))
